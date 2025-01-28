@@ -2,14 +2,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { products } from '../../data/products';
+import { products, ebooks } from '../../data/products';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './ProductDetails.scss';
 
 const ProductDetails = () => {
-  const { id } = useParams();
+  const { id, type } = useParams();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);
@@ -17,7 +17,10 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = () => {
       try {
-        const productData = products[id];
+        // Verifica se a URL contém "ebook"
+        const isEbook = window.location.pathname.includes('ebook');
+        const productData = isEbook ? ebooks[id] : products[id];
+        
         if (!productData) {
           navigate('/');
           return;
@@ -26,6 +29,7 @@ const ProductDetails = () => {
         window.scrollTo(0, 0);
       } catch (error) {
         console.error('Erro ao carregar produto:', error);
+        navigate('/');
       } finally {
         setLoading(false);
       }
@@ -54,6 +58,8 @@ const ProductDetails = () => {
         <div className="product-details__breadcrumb">
           <span onClick={() => navigate('/')}>Home</span>
           <span>/</span>
+          <span>{window.location.pathname.includes('ebook') ? 'E-books' : 'Produtos'}</span>
+          <span>/</span>
           <span>{product.name}</span>
         </div>
 
@@ -80,41 +86,73 @@ const ProductDetails = () => {
             </div>
 
             <div className="product-details__info">
-              <div className="product-details__section">
-                <h2>Descrição</h2>
-                <p>{product.longDescription}</p>
-              </div>
+              {window.location.pathname.includes('ebook') ? (
+                <>
+                  <div className="product-details__section">
+                    <h2>Sobre o E-book</h2>
+                    <p>{product.longDescription}</p>
+                  </div>
 
-              <div className="product-details__section">
-                <h2>Benefícios</h2>
-                <ul className="product-details__benefits">
-                  {product.benefits.map((benefit, index) => (
-                    <li key={index}>{benefit}</li>
-                  ))}
-                </ul>
-              </div>
+                  <div className="product-details__section">
+                    <h2>O que você vai aprender</h2>
+                    <ul className="product-details__benefits">
+                      {product.benefits.map((benefit, index) => (
+                        <li key={index}>{benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-              <div className="product-details__section">
-                <h2>Modo de Uso</h2>
-                <p>{product.usage}</p>
-              </div>
-
-              <div className="product-details__section">
-                <h2>Ingredientes</h2>
-                <p>{product.ingredients}</p>
-              </div>
-
-              <div className="product-details__section">
-                <h2>Especificações</h2>
-                <div className="product-details__specifications">
-                  {Object.entries(product.specifications).map(([key, value]) => (
-                    <div key={key} className="specification-item">
-                      <span className="label">{key}:</span>
-                      <span className="value">{value}</span>
+                  <div className="product-details__section">
+                    <h2>Informações do E-book</h2>
+                    <div className="product-details__specifications">
+                      {Object.entries(product.specifications).map(([key, value]) => (
+                        <div key={key} className="specification-item">
+                          <span className="label">{key}:</span>
+                          <span className="value">{value}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="product-details__section">
+                    <h2>Descrição</h2>
+                    <p>{product.longDescription}</p>
+                  </div>
+
+                  <div className="product-details__section">
+                    <h2>Benefícios</h2>
+                    <ul className="product-details__benefits">
+                      {product.benefits.map((benefit, index) => (
+                        <li key={index}>{benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="product-details__section">
+                    <h2>Modo de Uso</h2>
+                    <p>{product.usage}</p>
+                  </div>
+
+                  <div className="product-details__section">
+                    <h2>Ingredientes</h2>
+                    <p>{product.ingredients}</p>
+                  </div>
+
+                  <div className="product-details__section">
+                    <h2>Especificações</h2>
+                    <div className="product-details__specifications">
+                      {Object.entries(product.specifications).map(([key, value]) => (
+                        <div key={key} className="specification-item">
+                          <span className="label">{key}:</span>
+                          <span className="value">{value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
@@ -123,7 +161,7 @@ const ProductDetails = () => {
             <h1>{product.name}</h1>
             <p className="product-details__price">{product.price}</p>
             <button className="product-details__buy">
-              Comprar Agora
+              {window.location.pathname.includes('ebook') ? 'Baixar Agora' : 'Comprar Agora'}
             </button>
           </div>
         </div>

@@ -4,6 +4,8 @@ import Footer from './components/Footer/Footer';
 import WhatsappButton from './components/WhatsappButton/WhatsappButton';
 import Home from './pages/Home/Home';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import Tips from './components/Tips/Tips';
+import Advantages from './components/Advantages/Advantages';
 
 function App() {
   return (
@@ -25,6 +27,19 @@ function App() {
           />
           <Route 
             path="/produto/:id" 
+            element={
+              <>
+                <Header />
+                <main>
+                  <ProductDetails />
+                </main>
+                <Footer />
+                <WhatsappButton />
+              </>
+            } 
+          />
+          <Route 
+            path="/produto/ebook/:id" 
             element={
               <>
                 <Header />

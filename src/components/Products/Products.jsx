@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
-import { products } from '../../data/products';
+import { products, ebooks } from '../../data/products';
 import './Products.scss';
 import AnimateOnScroll from '../AnimateOnScroll/AnimateOnScroll';
 
 const Products = () => {
   const [showAll, setShowAll] = useState(false);
+  const [activeTab, setActiveTab] = useState('products');
 
-  const productsList = Object.values(products);
+  const productsList = Object.values(activeTab === 'products' ? products : ebooks);
 
   const sliderSettings = {
     dots: true,
@@ -42,7 +43,10 @@ const Products = () => {
           <p className="product-card__price">{item.price}</p>
           <p>{item.description}</p>
           <div className="product-card__buttons">
-            <Link to={`/produto/${item.id}`} className="btn-details">
+            <Link 
+              to={`/produto/${activeTab === 'products' ? '' : 'ebook/'}${item.id}`} 
+              className="btn-details"
+            >
               Detalhes
             </Link>
             <a href="#" className="btn-buy">Comprar</a>
@@ -57,8 +61,23 @@ const Products = () => {
       <div className="container">
         <h2>Nossos Produtos</h2>
         
+        <div className="products__tabs">
+          <button 
+            className={`products__tab ${activeTab === 'products' ? 'active' : ''}`}
+            onClick={() => setActiveTab('products')}
+          >
+            Produtos
+          </button>
+          <button 
+            className={`products__tab ${activeTab === 'ebooks' ? 'active' : ''}`}
+            onClick={() => setActiveTab('ebooks')}
+          >
+            E-books
+          </button>
+        </div>
+
         <div className="products__section">
-          <h3>Produtos Naturais</h3>
+          <h3>{activeTab === 'products' ? 'Produtos Naturais' : 'E-books Exclusivos'}</h3>
           {window.innerWidth <= 768 ? (
             <Slider {...sliderSettings}>
               {productsList.map(product => (

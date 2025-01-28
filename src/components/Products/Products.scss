@@ -37,6 +37,33 @@
       color: $white;
     }
   }
+
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__tab {
+    padding: $spacing-sm $spacing-lg;
+    border: 2px solid $primary-color;
+    background: transparent;
+    color: $primary-color;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &.active {
+      background: $primary-color;
+      color: $white;
+    }
+
+    &:hover {
+      background: $primary-color;
+      color: $white;
+    }
+  }
 }
 
 .product-card {

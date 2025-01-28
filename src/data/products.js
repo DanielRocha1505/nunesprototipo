@@ -188,4 +188,32 @@ export const products = {
       "Peso": "150g"
     }
   }
+};
+
+export const ebooks = {
+  1: {
+    id: 1,
+    name: "Guia Completo de Emagrecimento Saudável",
+    tag: "Mais Vendido",
+    price: "R$ 47,90",
+    description: "E-book com estratégias comprovadas para emagrecer de forma saudável",
+    longDescription: "Um guia completo que vai te ensinar passo a passo como emagrecer de forma saudável e sustentável, com cardápios, dicas e exercícios.",
+    images: [
+      "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?q=80&w=800",
+      "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800",
+      "https://images.unsplash.com/photo-1516383740770-fbcc5ccbece0?q=80&w=800"
+    ],
+    benefits: [
+      "Plano alimentar detalhado",
+      "Receitas saudáveis",
+      "Guia de exercícios",
+      "Dicas de motivação"
+    ],
+    specifications: {
+      "Páginas": "150",
+      "Formato": "PDF",
+      "Bônus": "3 planilhas extras"
+    }
+  },
+  // ... outros ebooks ...
 }; 
