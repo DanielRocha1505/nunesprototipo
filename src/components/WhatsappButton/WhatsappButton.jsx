@@ -2,17 +2,20 @@ import { FaWhatsapp } from 'react-icons/fa';
 import './WhatsappButton.scss';
 
 const WhatsappButton = () => {
+  const phoneNumber = '5511999999999'; // Substitua pelo número real
+  const message = 'Olá! Gostaria de saber mais sobre os produtos.';
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
   return (
-    <a
-      href="https://wa.me/5511999999999"
+    <a 
+      href={whatsappUrl}
+      className="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"
-      className="whatsapp-button"
+      aria-label="Contato via WhatsApp"
     >
       <FaWhatsapp />
-      <div className="whatsapp-button__tooltip">
-        Fale conosco no WhatsApp
-      </div>
+      <span className="whatsapp-button__tooltip">Fale Conosco</span>
     </a>
   );
 };

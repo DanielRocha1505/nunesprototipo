@@ -1,20 +1,24 @@
-$primary-color: #2ECC71;
-$secondary-color: #27AE60;
-$white: #FFFFFF;
-$black: #333333;
-$gray-light: #F5F5F5;
+// Cores
+$primary-color: #4CAF50;
+$secondary-color: #45a049;
+$white: #ffffff;
+$black: #000000;
+$gray-light: #f5f5f5;
 $gray: #666666;
 
-
+// Breakpoints
 $mobile: 768px;
 $tablet: 1024px;
 
+// Spacing
 $spacing-xs: 0.5rem;
 $spacing-sm: 1rem;
 $spacing-md: 1.5rem;
 $spacing-lg: 2rem;
 $spacing-xl: 3rem;
 
+// Container
 $container-width: 1200px;
 
+// Header
 $header-height: 80px; 

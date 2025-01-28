@@ -39,11 +39,11 @@ const Products = () => {
         <img src={item.images[0]} alt={item.name} />
         <div className="product-card__content">
           <h3>{item.name}</h3>
+          <p className="product-card__price">{item.price}</p>
           <p>{item.description}</p>
-          <div className="product-card__price">{item.price}</div>
           <div className="product-card__buttons">
-            <Link to={`/product/${item.id}`} className="btn-details">
-              Ver Detalhes
+            <Link to={`/produto/${item.id}`} className="btn-details">
+              Detalhes
             </Link>
             <a href="#" className="btn-buy">Comprar</a>
           </div>

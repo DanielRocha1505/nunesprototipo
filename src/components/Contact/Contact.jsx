@@ -1,53 +1,83 @@
-import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import AnimateOnScroll from '../AnimateOnScroll/AnimateOnScroll';
+import { useState } from 'react';
 import './Contact.scss';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Implementar lógica de envio de email aqui
+    console.log(formData);
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <AnimateOnScroll animation="fade-up">
-          <h2>Entre em Contato</h2>
-        </AnimateOnScroll>
-        
-        <div className="contact__grid">
-          <AnimateOnScroll animation="fade-right">
-            <div className="contact__info">
-              <div className="contact__item">
-                <FaWhatsapp />
-                <div>
-                  <h3>WhatsApp</h3>
-                  <p>(11) 99999-9999</p>
-                </div>
-              </div>
-              
-              <div className="contact__item">
-                <FaEnvelope />
-                <div>
-                  <h3>Email</h3>
-                  <p>contato@exemplo.com</p>
-                </div>
-              </div>
-              
-              <div className="contact__item">
-                <FaMapMarkerAlt />
-                <div>
-                  <h3>Endereço</h3>
-                  <p>Rua Exemplo, 123 - São Paulo/SP</p>
-                </div>
-              </div>
+        <h2>Entre em Contato</h2>
+        <div className="contact__content">
+          <div className="contact__info">
+            <h3>Informações de Contato</h3>
+            <p>Tire suas dúvidas ou faça um orçamento</p>
+            <div className="contact__details">
+              <p>Email: contato@empresa.com</p>
+              <p>Telefone: (11) 99999-9999</p>
+              <p>Horário: Seg-Sex, 9h às 18h</p>
             </div>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll animation="fade-left">
-            <form className="contact__form">
-              <input type="text" placeholder="Nome" required />
-              <input type="email" placeholder="Email" required />
-              <input type="tel" placeholder="Telefone" />
-              <textarea placeholder="Mensagem" required></textarea>
-              <button type="submit">Enviar Mensagem</button>
-            </form>
-          </AnimateOnScroll>
+          </div>
+          <form className="contact__form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Seu Nome"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Seu Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Seu Telefone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <textarea
+                name="message"
+                placeholder="Sua Mensagem"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Enviar Mensagem</button>
+          </form>
         </div>
       </div>
     </section>

@@ -31,15 +31,10 @@ const FAQ = () => {
   return (
     <section id="faq" className="faq">
       <div className="container">
-        <AnimateOnScroll animation="fade-up">
-          <h2>Perguntas Frequentes</h2>
-        </AnimateOnScroll>
+        <h2>Perguntas Frequentes</h2>
         <div className="faq__grid">
           {faqs.map((faq, index) => (
-            <AnimateOnScroll 
-              key={index} 
-              animation="fade-up"
-            >
+            <AnimateOnScroll key={index} animation="fade-up">
               <div 
                 className={`faq__item ${activeIndex === index ? 'active' : ''}`}
                 onClick={() => toggleFAQ(index)}

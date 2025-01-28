@@ -24,22 +24,24 @@
 
     .whatsapp-button__tooltip {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateX(-100%) scale(1);
     }
   }
 
   &__tooltip {
     position: absolute;
-    right: calc(100% + 10px);
+    right: 100%;
     background: $black;
     color: $white;
     padding: $spacing-xs $spacing-sm;
     border-radius: 4px;
     font-size: 0.9rem;
-    white-space: nowrap;
+    margin-right: $spacing-sm;
     opacity: 0;
-    transform: translateX(10px);
+    transform: translateX(-80%) scale(0.9);
     transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
 
     &::after {
       content: '';
