@@ -25,7 +25,6 @@
 
     @media (max-width: $mobile) {
       flex-direction: column;
-      margin-top: 140px;
       padding-top: $spacing-xl;
     }
   }
@@ -33,6 +32,10 @@
   &__content {
     flex: 1;
     padding-right: $spacing-xl;
+
+    @media (max-width: $mobile) {
+      margin-top: 140px;
+    }
 
     h1 {
       font-size: 3.5rem;
