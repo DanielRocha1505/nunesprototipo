@@ -1,0 +1,73 @@
+@import '../../styles/variables';
+
+.contact {
+  background: $white;
+
+  h2 {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    font-size: 2.5rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: $spacing-xl;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__info {
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: $spacing-md;
+      color: $primary-color;
+    }
+
+    p {
+      color: $gray;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__details {
+    margin-top: $spacing-lg;
+
+    p {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__form {
+    .form-group {
+      margin-bottom: $spacing-md;
+
+      input,
+      textarea {
+        width: 100%;
+        padding: $spacing-sm;
+        border: 1px solid $gray-light;
+        border-radius: 5px;
+        font-size: 1rem;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: $spacing-md;
+      font-size: 1.1rem;
+    }
+  }
+} 

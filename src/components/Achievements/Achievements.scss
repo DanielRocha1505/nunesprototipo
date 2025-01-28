@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+
+.achievements {
+  background: $gray-light;
+
+  h2 {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    font-size: 2.5rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    padding: $spacing-lg;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba($black, 0.05);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+
+      .achievements__icon {
+        animation: bounce 0.5s ease infinite;
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: $spacing-sm;
+    transition: all 0.3s ease;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: $spacing-xs;
+    color: $primary-color;
+  }
+
+  p {
+    color: $gray;
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+} 

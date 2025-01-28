@@ -1,0 +1,40 @@
+@import 'variables';
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import 'animations';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: $black;
+}
+
+.container {
+  max-width: $container-width;
+}
+
+.section {
+  padding: $spacing-xl 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: $primary-color;
+  color: $white;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: $secondary-color;
+  }
+} 

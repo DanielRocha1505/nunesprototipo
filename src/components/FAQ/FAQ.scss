@@ -1,0 +1,88 @@
+@import '../../styles/variables';
+
+.faq {
+  background: $gray-light;
+  padding: $spacing-xl 0;
+
+  h2 {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+  }
+
+  &__grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__item {
+    background: $white;
+    border-radius: 10px;
+    padding: $spacing-lg;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba($black, 0.05);
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($black, 0.1);
+    }
+
+    &.active {
+      .faq__answer {
+        max-height: 1000px;
+        opacity: 1;
+        padding-top: $spacing-md;
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+
+      .faq__icon {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-md;
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $black;
+    }
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: $primary-color;
+    transition: transform 0.3s ease;
+  }
+
+  &__answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    p {
+      color: $gray;
+      line-height: 1.6;
+    }
+  }
+} 

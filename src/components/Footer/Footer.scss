@@ -1,0 +1,90 @@
+@import '../../styles/variables';
+
+.footer {
+  background: $primary-color;
+  color: $white;
+  padding: $spacing-xl 0 $spacing-md;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__info {
+    p {
+      margin-top: $spacing-md;
+      line-height: 1.6;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    filter: brightness(0) invert(1);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: $spacing-md;
+    font-weight: 600;
+  }
+
+  &__links {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: $spacing-sm;
+
+        a {
+          color: $white;
+          text-decoration: none;
+          transition: opacity 0.3s ease;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+  &__contact {
+    p {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__social-icons {
+    display: flex;
+    gap: $spacing-md;
+
+    a {
+      color: $white;
+      font-size: 1.5rem;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__bottom {
+    padding-top: $spacing-md;
+    border-top: 1px solid rgba($white, 0.1);
+    text-align: center;
+    font-size: 0.9rem;
+  }
+} 
