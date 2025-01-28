@@ -16,6 +16,27 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: $spacing-lg;
   }
+
+  &__cta {
+    text-align: center;
+    margin-top: $spacing-xl;
+
+    .btn-primary {
+      display: inline-block;
+      padding: $spacing-md $spacing-xl;
+      background: linear-gradient(45deg, $primary-color, $secondary-color);
+      color: $white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba($primary-color, 0.2);
+      }
+    }
+  }
 }
 
 .tip-card {

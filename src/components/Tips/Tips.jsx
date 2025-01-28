@@ -1,5 +1,6 @@
 import './Tips.scss';
 import AnimateOnScroll from '../AnimateOnScroll/AnimateOnScroll';
+import { Link } from 'react-router-dom';
 
 const Tips = () => {
   const tips = [
@@ -38,6 +39,25 @@ const Tips = () => {
               </div>
             </AnimateOnScroll>
           ))}
+        </div>
+        <div className="tips__cta">
+          <Link 
+            to="/#products" 
+            className="btn-primary" 
+            onClick={() => {
+              const productsSection = document.getElementById('products');
+              if (productsSection) {
+                // Primeiro, clica na aba de ebooks
+                const ebooksTab = document.querySelector('.products__tab:nth-child(2)');
+                if (ebooksTab) ebooksTab.click();
+                
+                // Depois rola até a seção
+                productsSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            Quer saber mais dicas? Acesse nosso e-book
+          </Link>
         </div>
       </div>
     </section>

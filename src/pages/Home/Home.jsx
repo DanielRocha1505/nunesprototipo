@@ -7,13 +7,14 @@ import FAQ from '../../components/FAQ/FAQ';
 import './Home.scss';
 import Tips from '../../components/Tips/Tips';
 import Advantages from '../../components/Advantages/Advantages';
+import Testimonials from '../../components/Testimonials/Testimonials';
 
 const Home = () => {
   return (
     <div className="home">
       <HeroBanner />
-      <Achievements />
       <Tips />
+      <Testimonials />
       <Advantages />
       <Identification />
       <Products />
