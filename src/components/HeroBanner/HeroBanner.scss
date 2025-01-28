@@ -25,6 +25,7 @@
 
     @media (max-width: $mobile) {
       flex-direction: column;
+      margin-top: 140px;
       padding-top: $spacing-xl;
     }
   }
