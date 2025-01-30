@@ -7,9 +7,9 @@ export const products = {
     description: "Emagrecedor Natural | Tratamento 30 dias",
     longDescription: "O OzenFit é um suplemento 100% natural que age diretamente no controle da fome e ansiedade. Sua fórmula exclusiva foi desenvolvida por especialistas e contém ingredientes que auxiliam na queima de gordura localizada, redução do inchaço e aceleração do metabolismo.",
     images: [
-      "https://postimg.cc/HV4gJPjy",
-      "https://postimg.cc/phwHjwDD",
-      "https://postimg.cc/fSYhf8K1"
+      "https://i.postimg.cc/4NjNSDgB/ozenfit-capa.png",
+      "https://i.postimg.cc/NFMf3YFP/exemploozenfit.jpg",
+      "https://i.postimg.cc/D0MyFDbf/exemplozenfit2.jpg"
     ],
     benefits: [
       "Reduz a Fome e Ansiedade",
@@ -35,9 +35,9 @@ export const products = {
     description: "Bebida Emagrecedora | Sabor Laranja",
     longDescription: "DiurieFit Black é uma bebida emagrecedora em pó com sabor de laranja que age diretamente na queima de gordura. Com sua fórmula exclusiva, você terá resultados já nos primeiros dias de uso. Além de auxiliar no emagrecimento, ajuda a reduzir medidas e celulites.",
     images: [
-      "https://postimg.cc/gw0mbqz6",
-      "https://postimg.cc/p91xWhrc",
-      "https://postimg.cc/yggKk1S1"
+      "https://i.postimg.cc/LstXfNGv/diuri.png",
+      "https://i.postimg.cc/vBGmv5sy/diuri2.png",
+      "https://i.postimg.cc/W3S1YtNk/diuri3.png"
     ],
     benefits: [
       "Queima Gordura Localizada",
