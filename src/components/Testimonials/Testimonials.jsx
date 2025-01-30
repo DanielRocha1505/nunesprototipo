@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import AnimateOnScroll from '../AnimateOnScroll/AnimateOnScroll';
 import { Link } from 'react-router-dom';
 import './Testimonials.scss';
@@ -72,15 +72,11 @@ const Testimonials = () => {
         </AnimateOnScroll>
 
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Navigation, Pagination]}
           spaceBetween={30}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
           breakpoints={{
             768: {
               slidesPerView: 2,
@@ -96,15 +92,11 @@ const Testimonials = () => {
               <div className="testimonial-card">
                 <div className="testimonial-card__image">
                   <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
+                    modules={[Navigation, Pagination]}
                     spaceBetween={0}
                     slidesPerView={1}
                     navigation
                     pagination={{ clickable: true }}
-                    autoplay={{
-                      delay: 3000,
-                      disableOnInteraction: false,
-                    }}
                     className="testimonial-card__image-slider"
                   >
                     {testimonial.images.map((image, imgIndex) => (
