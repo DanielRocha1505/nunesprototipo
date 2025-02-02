@@ -21,7 +21,6 @@ export const products = {
     usage: "Tomar 2 cápsulas por dia, sendo 1 antes do almoço e 1 antes do jantar, com água em abundância.",
     ingredients: "Psyllium, Gengibre, Guaraná, Café Verde, Vitamina B3, Vitamina B5, Cromo, Zinco",
     specifications: {
-      "Quantidade": "60 cápsulas",
       "Duração": "30 dias",
       "Garantia": "90 dias",
       "Registro": "Produto Natural"

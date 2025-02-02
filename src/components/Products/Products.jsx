@@ -68,12 +68,6 @@ const Products = () => {
           >
             Produtos
           </button>
-          <button 
-            className={`products__tab ${activeTab === 'ebooks' ? 'active' : ''}`}
-            onClick={() => setActiveTab('ebooks')}
-          >
-            E-books
-          </button>
         </div>
 
         <div className="products__section">

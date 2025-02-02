@@ -32,7 +32,7 @@ const Contact = () => {
             <p>Tire suas dúvidas ou faça um orçamento</p>
             <div className="contact__details">
               <p>Email: contato@empresa.com</p>
-              <p>Telefone: (11) 99999-9999</p>
+              <p>Telefone: (18) 9 9737-6072</p>
               <p>Horário: Seg-Sex, 9h às 18h</p>
             </div>
           </div>

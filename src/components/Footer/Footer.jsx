@@ -51,7 +51,7 @@ const Footer = ({ showMenu = true }) => {
           <div className="footer__contact">
             <h3>Contato</h3>
             <p>Email: contato@empresa.com</p>
-            <p>Telefone: (11) 99999-9999</p>
+            <p>Telefone: (18) 9 9737-6072</p>
             <p>Endereço: Rua Exemplo, 123 - São Paulo/SP</p>
           </div>
 
@@ -67,7 +67,7 @@ const Footer = ({ showMenu = true }) => {
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <FaYoutube />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5518997376072" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp />
               </a>
             </div>

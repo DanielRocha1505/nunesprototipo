@@ -38,19 +38,6 @@ function App() {
               </>
             } 
           />
-          <Route 
-            path="/produto/ebook/:id" 
-            element={
-              <>
-                <Header />
-                <main>
-                  <ProductDetails />
-                </main>
-                <Footer />
-                <WhatsappButton />
-              </>
-            } 
-          />
         </Routes>
       </div>
     </Router>
