@@ -160,9 +160,14 @@ const ProductDetails = () => {
             <span className="product-details__tag">{product.tag}</span>
             <h1>{product.name}</h1>
             <p className="product-details__price">{product.price}</p>
-            <button className="product-details__buy">
-              {window.location.pathname.includes('ebook') ? 'Baixar Agora' : 'Comprar Agora'}
-            </button>
+            <a 
+              href={product.buyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="product-details__buy"
+            >
+              Comprar Agora
+            </a>
           </div>
         </div>
       </div>

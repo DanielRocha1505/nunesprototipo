@@ -43,13 +43,17 @@ const Products = () => {
           <p className="product-card__price">{item.price}</p>
           <p>{item.description}</p>
           <div className="product-card__buttons">
-            <Link 
-              to={`/produto/${activeTab === 'products' ? '' : 'ebook/'}${item.id}`} 
-              className="btn-details"
-            >
+            <Link to={`/produto/${item.id}`} className="btn-details">
               Detalhes
             </Link>
-            <a href="#" className="btn-buy">Comprar</a>
+            <a 
+              href={item.buyLink}
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="btn-buy"
+            >
+              Comprar
+            </a>
           </div>
         </div>
       </div>

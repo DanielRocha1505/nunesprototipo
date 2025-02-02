@@ -5,6 +5,7 @@ export const products = {
     tag: "Mais Vendido",
     price: "R$ 197,00",
     description: "Emagrecedor Natural | Tratamento 30 dias",
+    buyLink: "https://ev.braip.com/ref?pl=pla0wely&ck=cheqx91d&af=afio81pp3g",
     longDescription: "O OzenFit é um suplemento 100% natural que age diretamente no controle da fome e ansiedade. Sua fórmula exclusiva foi desenvolvida por especialistas e contém ingredientes que auxiliam na queima de gordura localizada, redução do inchaço e aceleração do metabolismo.",
     images: [
       "https://i.postimg.cc/4NjNSDgB/ozenfit-capa.png",
@@ -32,6 +33,7 @@ export const products = {
     tag: "Detox Natural",
     price: "R$ 147,00",
     description: "Bebida Emagrecedora | Sabor Laranja",
+    buyLink: "https://ev.braip.com/ref?pl=plam0ezy&ck=cherxmpv&af=afiyd422e5",
     longDescription: "DiurieFit Black é uma bebida emagrecedora em pó com sabor de laranja que age diretamente na queima de gordura. Com sua fórmula exclusiva, você terá resultados já nos primeiros dias de uso. Além de auxiliar no emagrecimento, ajuda a reduzir medidas e celulites.",
     images: [
       "https://i.postimg.cc/LstXfNGv/diuri.png",
