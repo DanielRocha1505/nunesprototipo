@@ -144,6 +144,10 @@
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-top: auto;
+    color: $white;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 
     &:hover {
       transform: translateY(-2px);

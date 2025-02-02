@@ -178,6 +178,9 @@
     .btn-buy {
       background: linear-gradient(45deg, $primary-color, $secondary-color);
       color: $white;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
 
       &:hover {
         opacity: 0.9;
