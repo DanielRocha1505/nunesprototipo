@@ -14,7 +14,6 @@ const Header = () => {
 
   const menuItems = [
     { id: 'home', label: 'Início' },
-    { id: 'achievements', label: 'Conquistas' },
     { id: 'identification', label: 'Você se Identifica?' },
     { id: 'products', label: 'Produtos' },
     { id: 'faq', label: 'FAQ' },
