@@ -3,7 +3,7 @@
 .footer {
   background: $primary-color;
   color: $white;
-  padding: $spacing-xl 0 $spacing-md;
+  padding: $spacing-xl 0 0;
 
   &__grid {
     display: grid;
@@ -82,9 +82,15 @@
   }
 
   &__bottom {
-    padding-top: $spacing-md;
-    border-top: 1px solid rgba($white, 0.1);
+    margin-top: $spacing-xl;
+    padding: $spacing-md 0;
     text-align: center;
     font-size: 0.9rem;
+    background: darken($primary-color, 10%);
+    
+    p {
+      margin: 0;
+      opacity: 0.9;
+    }
   }
 } 
