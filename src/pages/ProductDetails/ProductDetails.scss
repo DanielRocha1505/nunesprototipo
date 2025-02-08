@@ -250,6 +250,44 @@
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }
+
+  &__quantity {
+    margin: $spacing-md 0;
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: $spacing-sm;
+      color: $gray;
+    }
+
+    .quantity-options {
+      display: flex;
+      gap: $spacing-sm;
+      margin-bottom: $spacing-md;
+    }
+
+    .quantity-option {
+      flex: 1;
+      padding: $spacing-sm;
+      border: 2px solid $gray-light;
+      border-radius: 8px;
+      background: transparent;
+      color: $gray;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+
+      &.active {
+        background: $primary-color;
+        border-color: $primary-color;
+        color: $white;
+      }
+    }
+  }
 }
 
 @keyframes spin {

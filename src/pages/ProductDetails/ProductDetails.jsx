@@ -13,6 +13,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
 
   useEffect(() => {
     const fetchProduct = () => {
@@ -159,9 +160,34 @@ const ProductDetails = () => {
           <div className="product-details__summary">
             <span className="product-details__tag">{product.tag}</span>
             <h1>{product.name}</h1>
-            <p className="product-details__price">{product.price}</p>
+            
+            {!window.location.pathname.includes('ebook') && (
+              <div className="product-details__quantity">
+                <h3>Selecione a quantidade:</h3>
+                <div className="quantity-options">
+                  {[1, 2, 3].map((qty) => (
+                    <button
+                      key={qty}
+                      className={`quantity-option ${selectedQuantity === qty ? 'active' : ''}`}
+                      onClick={() => setSelectedQuantity(qty)}
+                    >
+                      {qty} {qty === 1 ? 'unidade' : 'unidades'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <p className="product-details__price">
+              {window.location.pathname.includes('ebook') 
+                ? product.price 
+                : product.quantities[selectedQuantity].price}
+            </p>
+            
             <a 
-              href={product.buyLink}
+              href={window.location.pathname.includes('ebook') 
+                ? product.buyLink 
+                : product.quantities[selectedQuantity].buyLink}
               target="_blank"
               rel="noopener noreferrer"
               className="product-details__buy"
